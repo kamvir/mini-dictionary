@@ -1,0 +1,7 @@
+{
+  "name": "mini-dictionary",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
