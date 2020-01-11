@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Dictionary</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2" class="ion-text-center">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>
+              <ion-list>
+                <ion-item>
+                    <ion-label position="floating">Type here...</ion-label>
+                    <ion-input type="text" [(ngModel)]="textInput" (keyup)="onInputText()"></ion-input>
+                  </ion-item>
+              </ion-list>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+              <ion-item class="ion-margin-vertical">
+                <ion-label>Select Language</ion-label>
+                <ion-select [(ngModel)]="selectedLanguage">
+                  <ion-select-option *ngFor="let lang of wordsService.languages | slice: 0 : 2" [value]="lang.key">{{lang.value}}</ion-select-option>
+                </ion-select><br>
+              </ion-item>
+              <ion-button (click)="onSubmit(textInput, selectedLanguage)" [disabled]="!(textInput && selectedLanguage)" expand="block" class="ion-margin-vertical">
+                Search
+                <ion-icon slot="end" name="search"></ion-icon>
+              </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2" class="ion-text-center">
+        <p *ngIf="isLoading">Loading...</p>
+        <p *ngIf="!isLoading && isSubmitted && results.length === 0">No results found.</p>
+        <ion-list>
+          <ion-item *ngFor="let result of results" (click)="gotoWordDetails(result)" detail>
+            <ion-label>
+              <h2>{{ result?.word }}</h2>
+              <p style="font-style: italic;">{{ result.phonetic ? result.phonetic : '' }}</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

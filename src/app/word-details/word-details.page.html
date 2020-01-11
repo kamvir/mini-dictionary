@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ wordsService.wordDetails.word | titlecase }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-grid>
+  <ion-row>
+    <ion-col size="12" size-sm="8" offset-sm="2">
+        <ion-card>
+            <ion-card-header>
+              <ion-card-title>
+                {{ wordsService.wordDetails.word }}
+              </ion-card-title>
+              <ion-card-subtitle class="ion-text-lowercase">
+                {{ wordsService.wordDetails.phonetic }}
+              </ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <div class="origin" *ngIf="wordsService.wordDetails.origin">
+                <strong>Origin:</strong>
+                <p>{{ wordsService.wordDetails.origin }}</p>
+              </div>
+              <div class="meaning" *ngIf="wordsService.wordDetails.meaning">
+                <strong>Meaning: </strong>
+                <hr color="lightgrey">
+                  <div class="meaning-keys" *ngFor="let key of keys">
+                      <strong>{{ key }}:</strong>
+                      <ng-container *ngIf="wordsService.isArray(wordsService.wordDetails.meaning[key])">
+                          <div class="meaning-key" *ngFor="let val of wordsService.wordDetails.meaning[key]">
+                              <h2 style="color: black;" *ngIf="val.definition">{{ val.definition }}</h2>
+                              <p style="color: grey;" *ngIf="val.example">"{{ val.example }}"</p>
+                              <div *ngIf="val.synonyms?.length > 0">
+                                <b>Synonyms:</b> {{ val.synonyms.join(', ') }}
+                              </div>
+                          </div>
+                      </ng-container>
+                      <ng-container *ngIf="!(wordsService.isArray(wordsService.wordDetails.meaning[key]))">
+                          <div class="meaning-key" *ngFor="let val of wordsService.wordDetails.meaning[key].definitions">
+                              <h2 style="color: black;" *ngIf="val.definition">{{ val.definition }}</h2>
+                              <p style="color: grey;" *ngIf="val.example">"{{ val.example }}"</p>
+                              <div *ngIf="val.synonyms?.length > 0">
+                                <b>Synonyms:</b> {{ val.synonyms.join(', ') }}
+                              </div>
+                          </div>
+                      </ng-container>  
+                  </div>
+              </div>
+            </ion-card-content>
+          </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>  
+</ion-content>
