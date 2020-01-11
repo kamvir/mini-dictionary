@@ -19,7 +19,7 @@ Hey guys this is my dictionary app created via ionic framework and cordova.
 
 <ul>
 <li>
-<p>Firstly clone this project into your local machine and go to that directory and type:</p>
+<p>Firstly, clone this project into your local machine and go to that directory and type:</p>
 <code>
 npm i
 </code>
