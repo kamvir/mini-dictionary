@@ -5,7 +5,7 @@ Hey guys this is my dictionary app created via ionic framework and cordova.
 <h1>Pre-requisites</h1>
 <ul>
 <li>
-<p>NodeJs and NPM (if you don't have click <a href="https://nodejs.org/en/download/">here</a>)</p>
+<p>NodeJs and NPM (if you don't have it. Click <a href="https://nodejs.org/en/download/">here</a>)</p>
 </li>
 <li>
 <p>Android Studio/ Xcode (for running it in our native devices)</p>
