@@ -30,7 +30,7 @@ That's it. It will open your web browser and will run by default on <a href="htt
 To make it run in your native device, first add cordova platform by running this command: 
 </p>
 <code>
-ionic cordova add android/ ios
+ionic cordova platform add android/ ios
 </code>
 </li>
 <li>
