@@ -8,7 +8,7 @@ Hey guys this is my dictionary app created via ionic framework and cordova.
 <p>NodeJs and NPM (if you don't have click <a href="https://nodejs.org/en/download/">here</a>)</p>
 </li>
 <li>
-<p>Android Studio/ Xcode (for running in our native devices)</p>
+<p>Android Studio/ Xcode (for running it in our native devices)</p>
 <p>If you don't have it get it here: </p>
 <p><a href="https://developer.android.com/">Android Studio</a></p>
 <p><a href="https://developer.apple.com/xcode/">X Code</a></p>
@@ -34,7 +34,7 @@ ionic s
 </li>
 </ul>
 <p>
-That's it. It will open your web browser and will run by default on <a href="http://localhost:8100" target="_blank">http://localhost:8100</a> successfully.
+That's it. It will open your web browser and will run by default on <a href="http://localhost:8100">http://localhost:8100</a> successfully.
 </p>
 <h1>Steps to make it runnable in your native device (android/ ios): </h1>
 <ul>
