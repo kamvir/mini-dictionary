@@ -27,7 +27,7 @@ That's it. It will open your web browser and will run by default on <a href="htt
 <ul>
 <li>
 <p>
-To run in on your native device, first add cordova platform by running this command: 
+To make it run in your native device, first add cordova platform by running this command: 
 </p>
 <code>
 ionic cordova add android/ ios
