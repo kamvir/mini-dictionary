@@ -21,7 +21,7 @@ ionic s
 </li>
 </ul>
 <p>
-That's it. It will open your web browser and will run by default on <a href="http://localhost:8100">http://localhost:8100</a> successfully.
+That's it. It will open your web browser and will run by default on <a href="http://localhost:8100" target="_blank">http://localhost:8100</a> successfully.
 </p>
 <h1>Steps to make it runnable in your native device (android/ ios): </h1>
 <ul>
